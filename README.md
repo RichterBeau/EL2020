@@ -1,2 +1,3 @@
-# EL2020
-This is my EL2020 class repository. All work here is mine unless noted otherwise.
+![](https://www.newpaltz.edu/media/identity/logos/newpaltzlogo.jpg)
+
+This repository documents my class work and projects done for CPS342
