@@ -8,11 +8,11 @@ This repository documents my class work and projects done for **CPS342**
 	
    1\. **Personal Information**:
 	   
-&nbsp;&nbsp;&nbsp;Name: *Beau Richter*
+&nbsp; &nbsp; Name: *Beau Richter*
 
-&nbsp;&nbsp;Major: *Computer Science*
+&nbsp;&nbsp;&nbsp;&nbsp;Major: *Computer Science*
 	
-ID: [*N03743050*](https://github/RichterBeau/EL2020)
+&nbsp;&nbsp;&nbsp;&nbsp;ID: [*N03743050*](https://github/RichterBeau/EL2020)
 	
 Year: *Senior*
 	
