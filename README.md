@@ -1,4 +1,4 @@
-<img src="https://www.newpaltz.edu/media/identity/logos/newpaltzlogo.jpg" width="400" height="124">
+<img src="https://www.newpaltz.edu/media/identity/logos/newpaltzlogo.jpg" width="280" height="87">
 
 
 **Spring 2020 Embedded Linux Class.**
@@ -8,13 +8,13 @@ This repository documents my class work and projects done for **CPS342**
 	
    1\. **Personal Information**:
 	   
-        Name: *Beau Richter*
+&nbsp;&nbsp;&nbsp;Name: *Beau Richter*
 
-   	Major: *Computer Science*
+&nbsp;&nbsp;Major: *Computer Science*
 	
-   	ID: [*N03743050*](https://github/RichterBeau/EL2020)
+ID: [*N03743050*](https://github/RichterBeau/EL2020)
 	
-   	Year: *Senior*
+Year: *Senior*
 	
    2\. **Class Start Date**: Jan 21, 2020 
 	
