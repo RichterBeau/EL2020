@@ -1,4 +1,4 @@
-![](https://www.newpaltz.edu/media/identity/logos/newpaltzlogo.jpg =628x195)
+![](https://www.newpaltz.edu/media/identity/logos/newpaltzlogo.jpg){width = 60%}
 
 **Spring 2020 Embedded Linux Class.**
 ---------------------------------------------------------------------------
@@ -7,13 +7,13 @@ This repository documents my class work and projects done for **CPS342**
 	
    1\. **Personal Information**:
 	   
-       Name: Beau Richter
+   Name: Beau Richter
 
-       Major: Computer Science
+   Major: Computer Science
 	
-       ID: [N03743050](https://www.github/RichterBeau/EL2020)
+   ID: [N03743050](https://www.github/RichterBeau/EL2020)
 	
-       Year: Senior
+   Year: Senior
 
    2\. **Class Start Date**: Jan 21, 2020 
 	
