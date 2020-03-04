@@ -10,7 +10,7 @@ buttonPin = 26
 tempSensor = Adafruit_DHT.DHT11
 
 blinkDur = .1
-blinkTime = 7
+blinkTime = 2
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(redPin, GPIO.OUT)
@@ -44,5 +44,4 @@ try:
 
 except KeyboardInterrupt:
     os.system('clear')
-    print('Thanks for Blinking and Thinking!')
     GPIO.cleanup()
