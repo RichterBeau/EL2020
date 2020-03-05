@@ -4,7 +4,6 @@
 **Spring 2020 Embedded Linux Class - blinktemp.py**
 ---------------------------------------------------------------------------
 
-This repository documents my class work and projects done for **CPS342**
 
 This python program uses a DHT11 temp sensor and on the press of a seperate touch sensor it will cause an LED to blink and then display the current temperature reading.
 
