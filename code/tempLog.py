@@ -2,10 +2,21 @@ import RPi.GPIO as GPIO
 import Adafruit_DHT
 import time
 import os
+import smtplib
+import socket
 
-redPin = 27
-tempPin = 17
-buttonPin = 26
+text = ""
+
+#SMTP variables
+eFROM = "richter.beau16@gmail.com"
+eTO = "6316455069@vtext.com"
+Subject = "Temperature Warning"
+server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+
+
+redPin = 23
+greenPin = 27
+dataPin = 17
 
 tempSensor = Adafruit_DHT.DHT11
 
@@ -14,32 +25,44 @@ blinkTime = 2
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(redPin, GPIO.OUT)
-GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(greenPin, GPIO.OUT)
 
-def oneBlink(pin):
+def turnOn(pin):
     GPIO.output(pin,True)
-    time.sleep(blinkDur)
-    GPIO.output(pin,False)
-    time.sleep(blinkDur)
 
-def readF(tempPin):
-    humidity, temperature = Adafruit_DHT.read_retry(tempSensor, tempPin)
+def turnOff(pin):
+    GPIO.output(pin,False)
+
+def readF(dataPin):
+    humidity, temperature = Adafruit_DHT.read_retry(tempSensor, dataPin)
     temperature = temperature * 9/5 + 32
+
     if humidity is not None and temperature is not None:
         tempFahr = '{0:0.1f}*F'.format(temperature)
+        humid = '{0:1}%'.format(humidity)
     else:
         print('Error Reading Sensor')
-    return tempFahr
+
+    if temperature > 80 or temperature < 70:
+        turnOn(redPin)
+        turnOff(greenPin)
+        text = "The temperature is " + tempFahr
+        eMessage = 'Subject: {}\n\n{}'.format(Subject, text)
+        server.login("richter.beau16@gmail.com", "mkvohzpjrvskfrec")
+        server.sendmail(eFROM, eTO, eMessage)
+        server.quit
+
+    else:
+        turnOn(greenPin)
+        turnOff(redPin)
+
+    return tempFahr,humid
 
 try:
     with open("../log/templog.csv", "a") as log:
         while True:
-            input_state = GPIO.input(buttonPin)
-            if input_state == True:
-                for i in range (blinkTime):
-                    oneBlink(redPin)
-                time.sleep(.2)
-                data = readF(tempPin)
+                time.sleep(60)
+                data = readF(dataPin)
                 print (data)
                 log.write("{0},{1}\n".format(time.strftime("%Y-%m-%d %H:%M:%S"),str(data)))
             
