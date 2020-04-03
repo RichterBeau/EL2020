@@ -48,7 +48,7 @@ tempFahr, hum = readTemp(tempPin)
 
 try:
 	while True:
-		time.sleep(15)
+		time.sleep(60)
 		temp, hum = readTemp(tempPin)
 		cur.execute('INSERT INTO temperature values(?,?,?)', (time.strftime('%Y-%m-%d %H:%M:%S'),temp,hum))
 		con.commit()
